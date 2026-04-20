@@ -3,106 +3,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aida Motavas — Computer Engineering</title>
-  <meta name="description" content="Aida Motavas — Computer Engineering B.Sc. at Politecnico di Torino. Backend engineering, microservices, Linux, Java.">
+  <title>Aida Motavas — Computer Engineering · Politecnico di Torino</title>
+  <meta name="description" content="Aida Motavas — Computer Engineering B.Sc. student at Politecnico di Torino. Backend engineer with 5 months of production experience in microservices, Java, and Linux systems.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Aida Motavas — home">
+  <header class="site-header" id="siteHeader">
+    <a href="#hero" class="brand">
       <svg class="brand__logo" viewBox="-80 -5 640 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
-          <clipPath id="h-ll"><polygon points="0 0, 37.5 -64.95, 440 -64.95, 477.5 0, 440 64.95, 37.5 64.95" /></clipPath>
-          <clipPath id="h-ap"><polygon points="0 0, 37.5 -64.95, 112.5 -64.95, 150 0, 112.5 64.95, 37.5 64.95" /></clipPath>
-          <clipPath id="h-rl"><polygon points="0 0, 37.5 -64.95, 296 -64.95, 258.5 0, 221 64.95, 37.5 64.95" /></clipPath>
-          <clipPath id="h-bb"><polygon points="0 0, 37.5 -64.95, 367.5 -64.95, 330 0, 292.5 64.95, 37.5 64.95" /></clipPath>
+          <clipPath id="hdr-ll"><polygon points="0 0, 37.5 -64.95, 440 -64.95, 477.5 0, 440 64.95, 37.5 64.95"/></clipPath>
+          <clipPath id="hdr-ap"><polygon points="0 0, 37.5 -64.95, 112.5 -64.95, 150 0, 112.5 64.95, 37.5 64.95"/></clipPath>
+          <clipPath id="hdr-rl"><polygon points="0 0, 37.5 -64.95, 296 -64.95, 258.5 0, 221 64.95, 37.5 64.95"/></clipPath>
+          <clipPath id="hdr-bb"><polygon points="0 0, 37.5 -64.95, 367.5 -64.95, 330 0, 292.5 64.95, 37.5 64.95"/></clipPath>
         </defs>
         <g fill="currentColor">
           <g transform="translate(37.5, 415) rotate(120)">
-            <polygon opacity="0.45" points="0 0, 37.5 64.95, 105 64.95, 105 0" />
-            <polygon opacity="1"    points="0 0, 37.5 -64.95, 105 -64.95, 105 0" />
+            <polygon opacity="0.45" points="0 0, 37.5 64.95, 105 64.95, 105 0"/>
+            <polygon opacity="1" points="0 0, 37.5 -64.95, 105 -64.95, 105 0"/>
           </g>
           <g transform="translate(441.5, 415) rotate(60)">
-            <polygon opacity="0.7"  points="0 0, 37.5 -64.95, 105 -64.95, 105 0" />
-            <polygon opacity="0.45" points="0 0, 37.5 64.95, 105 64.95, 105 0" />
+            <polygon opacity="0.7" points="0 0, 37.5 -64.95, 105 -64.95, 105 0"/>
+            <polygon opacity="0.45" points="0 0, 37.5 64.95, 105 64.95, 105 0"/>
           </g>
-          <g transform="translate(37.5, 415) rotate(-60)" clip-path="url(#h-ll)">
-            <polygon opacity="0.45" points="0 0, 0 -64.95, 480 -64.95, 480 0" />
-            <polygon opacity="1"    points="0 0, 0 64.95, 480 64.95, 480 0" />
+          <g transform="translate(37.5, 415) rotate(-60)" clip-path="url(#hdr-ll)">
+            <polygon opacity="0.45" points="0 0, 0 -64.95, 480 -64.95, 480 0"/>
+            <polygon opacity="1" points="0 0, 0 64.95, 480 64.95, 480 0"/>
           </g>
-          <g transform="translate(202, 0) rotate(60)" clip-path="url(#h-ap)">
-            <polygon opacity="0.7"  points="0 0, 0 -64.95, 112.5 -64.95, 112.5 0" />
-            <polygon opacity="0.45" points="0 0, 0 64.95, 112.5 64.95, 112.5 0" />
-            <polygon opacity="1"    points="112.5 64.95, 75 0, 112.5 -64.95, 150 0" />
+          <g transform="translate(202, 0) rotate(60)" clip-path="url(#hdr-ap)">
+            <polygon opacity="0.7" points="0 0, 0 -64.95, 112.5 -64.95, 112.5 0"/>
+            <polygon opacity="0.45" points="0 0, 0 64.95, 112.5 64.95, 112.5 0"/>
+            <polygon opacity="1" points="112.5 64.95, 75 0, 112.5 -64.95, 150 0"/>
           </g>
-          <g transform="translate(202, 0) rotate(60) translate(72, 0)" clip-path="url(#h-rl)">
-            <polygon opacity="0.7"  points="0 0, 0 -64.95, 294 -64.95, 294 0" />
-            <polygon opacity="0.45" points="0 0, 0 64.95, 294 64.95, 294 0" />
+          <g transform="translate(202, 0) rotate(60) translate(72, 0)" clip-path="url(#hdr-rl)">
+            <polygon opacity="0.7" points="0 0, 0 -64.95, 294 -64.95, 294 0"/>
+            <polygon opacity="0.45" points="0 0, 0 64.95, 294 64.95, 294 0"/>
           </g>
-          <g transform="translate(277, 0) rotate(60) translate(404) rotate(120)" clip-path="url(#h-bb)">
-            <polygon opacity="1"    points="0 0, 0 -64.95, 366.5 -64.95, 366.5 0" />
-            <polygon opacity="0.7"  points="0 0, 0 64.95, 366.5 64.95, 366.5 0" />
+          <g transform="translate(277, 0) rotate(60) translate(404) rotate(120)" clip-path="url(#hdr-bb)">
+            <polygon opacity="1" points="0 0, 0 -64.95, 366.5 -64.95, 366.5 0"/>
+            <polygon opacity="0.7" points="0 0, 0 64.95, 366.5 64.95, 366.5 0"/>
           </g>
         </g>
       </svg>
       <span class="brand__name">AIDA MOTAVAS</span>
     </a>
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main class="hero">
-    <svg class="hero__logo" viewBox="-80 -5 640 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <clipPath id="m-ll"><polygon points="0 0, 37.5 -64.95, 440 -64.95, 477.5 0, 440 64.95, 37.5 64.95" /></clipPath>
-        <clipPath id="m-ap"><polygon points="0 0, 37.5 -64.95, 112.5 -64.95, 150 0, 112.5 64.95, 37.5 64.95" /></clipPath>
-        <clipPath id="m-rl"><polygon points="0 0, 37.5 -64.95, 296 -64.95, 258.5 0, 221 64.95, 37.5 64.95" /></clipPath>
-        <clipPath id="m-bb"><polygon points="0 0, 37.5 -64.95, 367.5 -64.95, 330 0, 292.5 64.95, 37.5 64.95" /></clipPath>
-      </defs>
-      <g transform="translate(37.5, 415) rotate(120)">
-        <polygon fill="var(--red)"    points="0 0, 37.5 64.95, 105 64.95, 105 0" />
-        <polygon fill="var(--yellow)" points="0 0, 37.5 -64.95, 105 -64.95, 105 0" />
-      </g>
-      <g transform="translate(441.5, 415) rotate(60)">
-        <polygon fill="var(--blue)" points="0 0, 37.5 -64.95, 105 -64.95, 105 0" />
-        <polygon fill="var(--red)"  points="0 0, 37.5 64.95, 105 64.95, 105 0" />
-      </g>
-      <g transform="translate(37.5, 415) rotate(-60)" clip-path="url(#m-ll)">
-        <polygon fill="var(--red)" points="0 0, 0 -64.95, 480 -64.95, 480 0" />
-        <polygon fill="var(--yellow)" points="0 0, 0 64.95, 480 64.95, 480 0" />
-      </g>
-      <g transform="translate(202, 0) rotate(60)" clip-path="url(#m-ap)">
-        <polygon fill="var(--blue)" points="0 0, 0 -64.95, 112.5 -64.95, 112.5 0" />
-        <polygon fill="var(--red)" points="0 0, 0 64.95, 112.5 64.95, 112.5 0" />
-        <polygon fill="var(--yellow)" points="112.5 64.95, 75 0, 112.5 -64.95, 150 0" />
-      </g>
-      <g transform="translate(202, 0) rotate(60) translate(72, 0)" clip-path="url(#m-rl)">
-        <polygon fill="var(--blue)" points="0 0, 0 -64.95, 294 -64.95, 294 0" />
-        <polygon fill="var(--red)" points="0 0, 0 64.95, 294 64.95, 294 0" />
-      </g>
-      <g transform="translate(277, 0) rotate(60) translate(404) rotate(120)" clip-path="url(#m-bb)">
-        <polygon fill="var(--yellow)" points="0 0, 0 -64.95, 366.5 -64.95, 366.5 0" />
-        <polygon fill="var(--blue)" points="0 0, 0 64.95, 366.5 64.95, 366.5 0" />
-      </g>
-    </svg>
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+      <svg class="hero__logo" viewBox="-80 -5 640 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <clipPath id="m-ll"><polygon points="0 0, 37.5 -64.95, 440 -64.95, 477.5 0, 440 64.95, 37.5 64.95"/></clipPath>
+          <clipPath id="m-ap"><polygon points="0 0, 37.5 -64.95, 112.5 -64.95, 150 0, 112.5 64.95, 37.5 64.95"/></clipPath>
+          <clipPath id="m-rl"><polygon points="0 0, 37.5 -64.95, 296 -64.95, 258.5 0, 221 64.95, 37.5 64.95"/></clipPath>
+          <clipPath id="m-bb"><polygon points="0 0, 37.5 -64.95, 367.5 -64.95, 330 0, 292.5 64.95, 37.5 64.95"/></clipPath>
+        </defs>
+        <g transform="translate(37.5, 415) rotate(120)">
+          <polygon fill="var(--red)" points="0 0, 37.5 64.95, 105 64.95, 105 0"/>
+          <polygon fill="var(--yellow)" points="0 0, 37.5 -64.95, 105 -64.95, 105 0"/>
+        </g>
+        <g transform="translate(441.5, 415) rotate(60)">
+          <polygon fill="var(--blue)" points="0 0, 37.5 -64.95, 105 -64.95, 105 0"/>
+          <polygon fill="var(--red)" points="0 0, 37.5 64.95, 105 64.95, 105 0"/>
+        </g>
+        <g transform="translate(37.5, 415) rotate(-60)" clip-path="url(#m-ll)">
+          <polygon fill="var(--red)" points="0 0, 0 -64.95, 480 -64.95, 480 0"/>
+          <polygon fill="var(--yellow)" points="0 0, 0 64.95, 480 64.95, 480 0"/>
+        </g>
+        <g transform="translate(202, 0) rotate(60)" clip-path="url(#m-ap)">
+          <polygon fill="var(--blue)" points="0 0, 0 -64.95, 112.5 -64.95, 112.5 0"/>
+          <polygon fill="var(--red)" points="0 0, 0 64.95, 112.5 64.95, 112.5 0"/>
+          <polygon fill="var(--yellow)" points="112.5 64.95, 75 0, 112.5 -64.95, 150 0"/>
+        </g>
+        <g transform="translate(202, 0) rotate(60) translate(72, 0)" clip-path="url(#m-rl)">
+          <polygon fill="var(--blue)" points="0 0, 0 -64.95, 294 -64.95, 294 0"/>
+          <polygon fill="var(--red)" points="0 0, 0 64.95, 294 64.95, 294 0"/>
+        </g>
+        <g transform="translate(277, 0) rotate(60) translate(404) rotate(120)" clip-path="url(#m-bb)">
+          <polygon fill="var(--yellow)" points="0 0, 0 -64.95, 366.5 -64.95, 366.5 0"/>
+          <polygon fill="var(--blue)" points="0 0, 0 64.95, 366.5 64.95, 366.5 0"/>
+        </g>
+      </svg>
 
-    <h1 class="hero__name">Aida Motavas</h1>
-    <p class="hero__tagline">Computer Engineering · Politecnico di Torino</p>
-    <p class="hero__status">Portfolio in progress — full site coming soon.</p>
-
-    <div class="hero__links">
-      <a href="mailto:Aidamotavas@gmail.com">Aidamotavas@gmail.com</a>
-      <span aria-hidden="true">·</span>
-      <a href="https://github.com/aidamts" target="_blank" rel="noopener">GitHub</a>
+      <h1 class="hero__name">Aida Motavas</h1>
+      <p class="hero__tagline">Computer Engineering · Politecnico di Torino</p>
+      <div class="hero__scroll-hint">scroll ↓</div>
     </div>
-  </main>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <span class="section__label reveal">About</span>
+      <h2 class="section__title reveal delay-1">Backend engineering student<br>with a taste for production systems.</h2>
+      <p class="section__body reveal delay-2">
+        I'm a third-year Computer Engineering student at Politecnico di Torino (English-taught track) with five months of hands-on backend experience in a production microservices environment. I like taking a feature from design through database modeling, middleware, logging, unit testing, and documentation — and I believe simple code beats clever code every time.
+      </p>
+      <div class="about__highlights">
+        <div class="highlight reveal delay-3"><strong>5 months</strong><span>production backend experience</span></div>
+        <div class="highlight reveal delay-4"><strong>3 services</strong><span>middleware, logging, unit tests</span></div>
+        <div class="highlight reveal delay-5"><strong>Jul 2026</strong><span>expected graduation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <span class="section__label reveal">Experience</span>
+      <h2 class="section__title reveal delay-1">Where I've worked.</h2>
+      <article class="timeline-card reveal delay-2">
+        <div class="timeline-card__header">
+          <div>
+            <h3>Backend Development &amp; System Integration Intern</h3>
+            <p class="timeline-card__company">StarView S.R.L. · Turin, Italy</p>
+          </div>
+          <span class="timeline-card__dates">Jul 2025 — Nov 2025</span>
+        </div>
+        <ul class="timeline-card__bullets">
+          <li>Worked in a production microservices platform; implemented middleware between the API layer and the database (input validation, request routing, safe read/update/store flows) across three services.</li>
+          <li>Designed and optimised relational data models and SQL queries; defined entity relationships and enforced data consistency across services.</li>
+          <li>Added structured logging across three services and wrote unit tests to catch regressions before release.</li>
+          <li>Authored technical documentation of service behaviour and REST API endpoints; collaborated through Git feature branches, merge requests, and peer code reviews.</li>
+        </ul>
+        <div class="tags">
+          <span>Microservices</span><span>Java</span><span>SQL</span><span>REST API</span><span>Middleware</span><span>Unit Testing</span><span>Git / MR</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <span class="section__label reveal">Projects</span>
+      <h2 class="section__title reveal delay-1">Selected work.</h2>
+      <div class="project-grid">
+        <article class="project-card reveal delay-2">
+          <h3 class="project-card__title">Weather Report</h3>
+          <p class="project-card__subtitle">Environmental Monitoring Backend · 2025</p>
+          <p class="project-card__body">
+            Java backend that ingests sensor measurements, detects threshold violations, and produces statistical reports (mean, variance, outliers, histograms) over a network/gateway/sensor topology. Applied Facade, Repository, and Factory patterns; modelled role-based access control (VIEWER/MAINTAINER) and a typed exception hierarchy.
+          </p>
+          <div class="tags project-card__tags">
+            <span>Java</span><span>JPA</span><span>Hibernate</span><span>H2</span><span>JUnit</span><span>GitFlow</span>
+          </div>
+        </article>
+        <article class="project-card reveal delay-3">
+          <h3 class="project-card__title">Concurrent Programming in C</h3>
+          <p class="project-card__subtitle">Operating Systems Course · 2025–2026</p>
+          <p class="project-card__body">
+            Implemented classical synchronization problems (producer-consumer, readers-writers) in C with POSIX PThreads on Linux, and wrote Bash scripts using pipes, signals, and process control (fork, exec, IPC) to automate small system tasks.
+          </p>
+          <div class="tags project-card__tags">
+            <span>C</span><span>POSIX</span><span>PThreads</span><span>Linux</span><span>Bash</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <span class="section__label reveal">Skills</span>
+      <h2 class="section__title reveal delay-1">What I work with.</h2>
+      <div class="skills-grid">
+        <div class="skills-group reveal delay-2">
+          <h3>Programming Languages</h3>
+          <div class="tags">
+            <span>Java</span><span>Python</span><span>C</span><span>SQL</span><span>Bash / Shell</span><span>Verilog</span><span>MATLAB</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="skills-group reveal delay-3">
+          <h3>Backend &amp; Data</h3>
+          <div class="tags">
+            <span>Microservices</span><span>Middleware design</span><span>REST API</span><span>Relational modeling</span><span>JPA · Hibernate · H2</span><span>JUnit</span><span>Structured logging</span><span>API documentation</span>
+          </div>
+        </div>
+        <div class="skills-group reveal delay-4">
+          <h3>Operating Systems &amp; Networking</h3>
+          <div class="tags">
+            <span>Linux administration</span><span>POSIX threads</span><span>Synchronization</span><span>TCP/IP</span><span>HTTP · DNS</span><span>Packet analysis</span><span>Computer architecture</span>
+          </div>
+        </div>
+        <div class="skills-group reveal delay-5">
+          <h3>Engineering Practices &amp; Tools</h3>
+          <div class="tags">
+            <span>OO design</span><span>Facade · Repository · Factory</span><span>SOLID</span><span>Clean code</span><span>Git · GitFlow</span><span>Merge requests / PRs</span><span>Peer code reviews</span><span>Eclipse · IntelliJ · VS Code</span><span>Maven</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="container">
+      <span class="section__label reveal">Education</span>
+      <h2 class="section__title reveal delay-1">Learning.</h2>
+      <article class="edu-card reveal delay-2">
+        <div class="edu-card__header">
+          <h3>Bachelor of Science in Computer Engineering</h3>
+          <p class="edu-card__institution">Politecnico di Torino · English-taught track</p>
+          <span class="edu-card__dates">Sep 2023 — Jul 2026 (expected)</span>
+        </div>
+        <details class="edu-card__coursework">
+          <summary>Relevant coursework</summary>
+          <ul>
+            <li>Algorithms and Data Structures — C</li>
+            <li>Databases — SQL, ER design, triggers</li>
+            <li>Object-Oriented Programming — Java, design patterns, JUnit</li>
+            <li>Operating Systems — Linux, POSIX threads, synchronization</li>
+            <li>Computer Architecture</li>
+            <li>Computer Networks — TCP/IP, HTTP, DNS</li>
+            <li>Programming Techniques — C</li>
+            <li>Computer Sciences — Python</li>
+          </ul>
+        </details>
+      </article>
+
+      <div class="langs">
+        <div class="lang reveal delay-3" style="--level: 0.9;">
+          <div class="lang__name">English</div>
+          <div class="lang__level">Professional working proficiency · Full degree taught in English</div>
+          <div class="lang__bar"><div class="lang__bar-fill"></div></div>
+        </div>
+        <div class="lang reveal delay-4" style="--level: 0.75;">
+          <div class="lang__name">Italian</div>
+          <div class="lang__level">Working proficiency · Daily academic &amp; internship use</div>
+          <div class="lang__bar"><div class="lang__bar-fill"></div></div>
+        </div>
+        <div class="lang reveal delay-5" style="--level: 1;">
+          <div class="lang__name">Persian</div>
+          <div class="lang__level">Native speaker</div>
+          <div class="lang__bar"><div class="lang__bar-fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <span class="section__label reveal">Contact</span>
+      <h2 class="section__title reveal delay-1">Let's talk.</h2>
+      <p class="section__body reveal delay-2">
+        Based in Turin, Italy. Available part-time during the final semester and full-time after graduation in 2026. Open to relocation within Italy and remote work.
+      </p>
+      <div class="contact-links">
+        <a class="contact-btn contact-btn--primary reveal delay-3" href="mailto:Aidamotavas@gmail.com">Email me</a>
+        <a class="contact-btn reveal delay-3" href="tel:+393517127987">+39 351 712 7987</a>
+        <a class="contact-btn reveal delay-4" href="https://github.com/aidamts" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </section>
 
   <footer class="site-footer">
-    <small>© <span id="year"></span> Aida Motavas · Turin, Italy</small>
+    <svg class="brand__logo" viewBox="-80 -5 640 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <clipPath id="f-ll"><polygon points="0 0, 37.5 -64.95, 440 -64.95, 477.5 0, 440 64.95, 37.5 64.95"/></clipPath>
+        <clipPath id="f-ap"><polygon points="0 0, 37.5 -64.95, 112.5 -64.95, 150 0, 112.5 64.95, 37.5 64.95"/></clipPath>
+        <clipPath id="f-rl"><polygon points="0 0, 37.5 -64.95, 296 -64.95, 258.5 0, 221 64.95, 37.5 64.95"/></clipPath>
+        <clipPath id="f-bb"><polygon points="0 0, 37.5 -64.95, 367.5 -64.95, 330 0, 292.5 64.95, 37.5 64.95"/></clipPath>
+      </defs>
+      <g fill="currentColor">
+        <g transform="translate(37.5, 415) rotate(120)">
+          <polygon opacity="0.45" points="0 0, 37.5 64.95, 105 64.95, 105 0"/>
+          <polygon opacity="1" points="0 0, 37.5 -64.95, 105 -64.95, 105 0"/>
+        </g>
+        <g transform="translate(441.5, 415) rotate(60)">
+          <polygon opacity="0.7" points="0 0, 37.5 -64.95, 105 -64.95, 105 0"/>
+          <polygon opacity="0.45" points="0 0, 37.5 64.95, 105 64.95, 105 0"/>
+        </g>
+        <g transform="translate(37.5, 415) rotate(-60)" clip-path="url(#f-ll)">
+          <polygon opacity="0.45" points="0 0, 0 -64.95, 480 -64.95, 480 0"/>
+          <polygon opacity="1" points="0 0, 0 64.95, 480 64.95, 480 0"/>
+        </g>
+        <g transform="translate(202, 0) rotate(60)" clip-path="url(#f-ap)">
+          <polygon opacity="0.7" points="0 0, 0 -64.95, 112.5 -64.95, 112.5 0"/>
+          <polygon opacity="0.45" points="0 0, 0 64.95, 112.5 64.95, 112.5 0"/>
+          <polygon opacity="1" points="112.5 64.95, 75 0, 112.5 -64.95, 150 0"/>
+        </g>
+        <g transform="translate(202, 0) rotate(60) translate(72, 0)" clip-path="url(#f-rl)">
+          <polygon opacity="0.7" points="0 0, 0 -64.95, 294 -64.95, 294 0"/>
+          <polygon opacity="0.45" points="0 0, 0 64.95, 294 64.95, 294 0"/>
+        </g>
+        <g transform="translate(277, 0) rotate(60) translate(404) rotate(120)" clip-path="url(#f-bb)">
+          <polygon opacity="1" points="0 0, 0 -64.95, 366.5 -64.95, 366.5 0"/>
+          <polygon opacity="0.7" points="0 0, 0 64.95, 366.5 64.95, 366.5 0"/>
+        </g>
+      </g>
+    </svg>
+    <span>© <span id="year"></span> Aida Motavas · Turin, Italy</span>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
