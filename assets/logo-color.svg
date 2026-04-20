@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-80 -5 640 560" width="640" height="560" role="img" aria-label="Aida Motavas logo - impossible A">
+  <defs>
+    <style>
+      .c-red { fill: hsl(0 85% 62%); }
+      .c-yellow { fill: hsl(45 90% 55%); }
+      .c-blue { fill: hsl(210 90% 62%); }
+    </style>
+    <clipPath id="cp-left-leg"><polygon points="0 0, 37.5 -64.95, 440 -64.95, 477.5 0, 440 64.95, 37.5 64.95" /></clipPath>
+    <clipPath id="cp-apex"><polygon points="0 0, 37.5 -64.95, 112.5 -64.95, 150 0, 112.5 64.95, 37.5 64.95" /></clipPath>
+    <clipPath id="cp-right-leg"><polygon points="0 0, 37.5 -64.95, 296 -64.95, 258.5 0, 221 64.95, 37.5 64.95" /></clipPath>
+    <clipPath id="cp-bottom-bar"><polygon points="0 0, 37.5 -64.95, 367.5 -64.95, 330 0, 292.5 64.95, 37.5 64.95" /></clipPath>
+  </defs>
+
+  <!-- ===== FEET (drawn first so Penrose sits on top at the joint) ===== -->
+  <!-- Left foot (continues left leg down-and-left) -->
+  <g transform="translate(37.5, 415) rotate(120)">
+    <polygon class="c-red"    points="0 0, 37.5 64.95, 105 64.95, 105 0" />
+    <polygon class="c-yellow" points="0 0, 37.5 -64.95, 105 -64.95, 105 0" />
+  </g>
+  <!-- Right foot (continues right leg down-and-right) -->
+  <g transform="translate(441.5, 415) rotate(60)">
+    <polygon class="c-blue" points="0 0, 37.5 -64.95, 105 -64.95, 105 0" />
+    <polygon class="c-red"  points="0 0, 37.5 64.95, 105 64.95, 105 0" />
+  </g>
+
+  <!-- ===== PENROSE TRIANGLE (original geometry) ===== -->
+  <g transform="translate(37.5, 415) rotate(-60)" clip-path="url(#cp-left-leg)">
+    <polygon class="c-red" points="0 0, 0 -64.95, 480 -64.95, 480 0" />
+    <polygon class="c-yellow" points="0 0, 0 64.95, 480 64.95, 480 0" />
+  </g>
+  <g transform="translate(202, 0) rotate(60)" clip-path="url(#cp-apex)">
+    <polygon class="c-blue" points="0 0, 0 -64.95, 112.5 -64.95, 112.5 0" />
+    <polygon class="c-red" points="0 0, 0 64.95, 112.5 64.95, 112.5 0" />
+    <polygon class="c-yellow" points="112.5 64.95, 75 0, 112.5 -64.95, 150 0" />
+  </g>
+  <g transform="translate(202, 0) rotate(60) translate(72, 0)" clip-path="url(#cp-right-leg)">
+    <polygon class="c-blue" points="0 0, 0 -64.95, 294 -64.95, 294 0" />
+    <polygon class="c-red" points="0 0, 0 64.95, 294 64.95, 294 0" />
+  </g>
+  <g transform="translate(277, 0) rotate(60) translate(404) rotate(120)" clip-path="url(#cp-bottom-bar)">
+    <polygon class="c-yellow" points="0 0, 0 -64.95, 366.5 -64.95, 366.5 0" />
+    <polygon class="c-blue" points="0 0, 0 64.95, 366.5 64.95, 366.5 0" />
+  </g>
+</svg>
