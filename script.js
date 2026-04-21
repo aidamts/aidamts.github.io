@@ -44,15 +44,13 @@ if (!prefersReduced && window.gsap && window.ScrollTrigger) {
     scrollTrigger: {
       trigger: hero,
       start: 'top top',
-      end: '+=140%',
-      pin: true,
-      scrub: 1,
-      anticipatePin: 1
+      end: 'bottom top',
+      scrub: 1
     }
   });
 
   tl.to(hint, { autoAlpha: 0, duration: 0.1 }, 0)
-    .to(bg, { clipPath: 'circle(120% at 50% 50%)', duration: 1 }, 0)
-    .to(logo, { scale: 3.2, opacity: 0, duration: 1, ease: 'power2.in', transformOrigin: '50% 50%' }, 0.1)
+    .to(bg, { clipPath: 'circle(130% at 50% 50%)', duration: 1 }, 0)
+    .to(logo, { scale: 2.4, opacity: 0, duration: 1, ease: 'power2.in', transformOrigin: '50% 50%' }, 0.1)
     .to([name, tagline], { y: -40, opacity: 0, duration: 0.6, ease: 'power2.in', stagger: 0.05 }, 0.15);
 }
