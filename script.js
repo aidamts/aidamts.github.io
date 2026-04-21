@@ -1,5 +1,32 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+/* ---------- Creepy CV button: pupils follow cursor ---------- */
+(function () {
+  const btn = document.getElementById('cvBtn');
+  if (!btn) return;
+  const eyes = btn.querySelector('.creepy-btn__eyes');
+  const pupils = btn.querySelectorAll('.creepy-btn__pupil');
+
+  const update = (e) => {
+    const p = e.touches ? e.touches[0] : e;
+    const r = eyes.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+    const cy = r.top + r.height / 2;
+    const dx = p.clientX - cx;
+    const dy = p.clientY - cy;
+    const angle = Math.atan2(-dy, dx) + Math.PI / 2;
+    const dist = Math.hypot(dx, dy);
+    const x = Math.sin(angle) * dist / 180;
+    const y = Math.cos(angle) * dist / 75;
+    const tx = `${-50 + x * 50}%`;
+    const ty = `${-50 + y * 50}%`;
+    pupils.forEach((p) => { p.style.transform = `translate(${tx}, ${ty})`; });
+  };
+
+  window.addEventListener('mousemove', update, { passive: true });
+  window.addEventListener('touchmove', update, { passive: true });
+})();
+
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Sticky header styling on scroll ---------- */

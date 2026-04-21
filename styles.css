@@ -11,6 +11,8 @@
   --red: hsl(0 85% 62%);
   --yellow: hsl(45 90% 55%);
   --blue: hsl(210 90% 62%);
+  --purple: hsl(268 65% 62%);
+  --purple-dim: hsl(268 45% 40%);
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.16);
   --maxw: 1100px;
@@ -51,9 +53,10 @@ body::before {
   border-radius: 50%;
   background: radial-gradient(
     circle at bottom center,
-    hsl(210 90% 62% / 0.07),
-    hsl(0 85% 62% / 0.035) 40%,
-    transparent 70%
+    hsl(268 65% 62% / 0.10),
+    hsl(210 90% 62% / 0.06) 35%,
+    hsl(0 85% 62% / 0.03) 55%,
+    transparent 72%
   );
   transform: translate(-50%, -50%) rotate(var(--angle));
   z-index: -1;
@@ -125,7 +128,102 @@ h1, h2, h3 {
 .site-nav a:hover::after { width: 100%; }
 .site-nav a:hover { opacity: 1; color: var(--fg); }
 
-@media (max-width: 700px) { .site-nav { display: none; } }
+@media (max-width: 700px) { .site-nav a:not(.creepy-btn) { display: none; } }
+
+/* ---------- CREEPY CV BUTTON ---------- */
+.creepy-btn {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  background: #000;
+  border-radius: 0.7em;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: 2px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+  transition: outline-color 0.1s linear, opacity 0.2s ease;
+}
+.creepy-btn:hover { opacity: 1; }
+.creepy-btn:focus-visible { outline-color: var(--purple); }
+
+.creepy-btn__cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--purple);
+  border-radius: 0.7em;
+  box-shadow: 0 0 0 2px #000 inset;
+  padding: 0.55em 2.6em 0.95em;
+  min-width: 5em;
+  text-align: center;
+  transform-origin: 0.9em 50%;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.creepy-btn:hover .creepy-btn__cover {
+  background: hsl(268 55% 50%);
+  transform: rotate(-12deg);
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1.65);
+}
+
+.creepy-btn:active .creepy-btn__cover {
+  transform: rotate(0);
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.creepy-btn__eyes {
+  position: absolute;
+  left: 50%;
+  bottom: 0.35em;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.22em;
+  height: 0.45em;
+  pointer-events: none;
+}
+
+.creepy-btn__eye {
+  position: relative;
+  width: 0.45em;
+  height: 0.45em;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: eye-blink 3.5s infinite;
+}
+
+.creepy-btn__pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.3em;
+  aspect-ratio: 1;
+  background: #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+@keyframes eye-blink {
+  0%, 92%, 100% {
+    height: 0.45em;
+    animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+  96% {
+    height: 0;
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  }
+}
 
 /* ---------- HERO ---------- */
 .hero {
@@ -143,11 +241,12 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 30%, hsl(210 90% 62% / 0.8), transparent 40%),
-    radial-gradient(circle at 70% 70%, hsl(0 85% 62% / 0.8), transparent 45%),
-    radial-gradient(circle at 50% 50%, hsl(45 90% 55% / 0.6), transparent 50%),
-    linear-gradient(135deg, #1a1a25, #0d0d10);
-  background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
+    radial-gradient(circle at 25% 30%, hsl(210 90% 62% / 0.85), transparent 40%),
+    radial-gradient(circle at 75% 30%, hsl(268 65% 62% / 0.75), transparent 42%),
+    radial-gradient(circle at 70% 75%, hsl(0 85% 62% / 0.8), transparent 45%),
+    radial-gradient(circle at 50% 55%, hsl(45 90% 55% / 0.55), transparent 50%),
+    linear-gradient(135deg, #1a1625, #0d0d10);
+  background-size: 200% 200%, 220% 220%, 200% 200%, 200% 200%, 100% 100%;
   animation: flow-bg 18s ease-in-out infinite alternate;
   clip-path: polygon(50% 45%, 50% 55%, 50% 55%);
   will-change: clip-path;
@@ -170,17 +269,50 @@ h1, h2, h3 {
   height: auto;
   margin-bottom: 1rem;
   filter:
-    drop-shadow(calc(var(--distX) * 1px) calc(var(--distY) * 1px) 25px hsl(210 90% 62% / 0.55))
-    drop-shadow(calc(var(--distX) * -0.6px) calc(var(--distY) * -0.6px) 20px hsl(0 85% 62% / 0.35))
-    drop-shadow(0 0 40px hsl(45 90% 55% / 0.18));
+    drop-shadow(calc(var(--distX) * 1px) calc(var(--distY) * 1px) 25px hsl(210 90% 62% / 0.5))
+    drop-shadow(calc(var(--distX) * -0.6px) calc(var(--distY) * -0.6px) 22px hsl(268 65% 62% / 0.45))
+    drop-shadow(0 0 40px hsl(0 85% 62% / 0.2));
   animation: orbit-shadow 10s linear infinite;
   will-change: transform, opacity;
 }
 
 .hero__name {
-  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  position: relative;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
   font-weight: 700;
+  line-height: 1.1;
+  filter: url(#threshold);
+  user-select: none;
+  height: 1.2em;
+  min-width: 14ch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.hero__word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  animation: rotate-words 9s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero__word:nth-child(1) { animation-delay: 0s; }
+.hero__word:nth-child(2) { animation-delay: 3s; }
+.hero__word:nth-child(3) { animation-delay: 6s; }
+
+@keyframes rotate-words {
+  0%       { opacity: 0; filter: blur(12px); transform: translate(-50%, -50%) scale(0.96); }
+  10%      { opacity: 1; filter: blur(0);    transform: translate(-50%, -50%) scale(1); }
+  28%      { opacity: 1; filter: blur(0);    transform: translate(-50%, -50%) scale(1); }
+  40%      { opacity: 0; filter: blur(12px); transform: translate(-50%, -50%) scale(1.04); }
+  100%     { opacity: 0; filter: blur(12px); transform: translate(-50%, -50%) scale(1.04); }
+}
+
+.svg-filters { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 .hero__tagline {
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -283,7 +415,7 @@ h1, h2, h3 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, var(--red), var(--yellow), var(--blue));
+  background: linear-gradient(180deg, var(--red), var(--yellow), var(--purple), var(--blue));
 }
 
 .timeline-card__header {
@@ -365,8 +497,11 @@ h1, h2, h3 {
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-strong);
-  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6), 0 0 40px -10px hsl(210 90% 62% / 0.15);
+  border-color: hsl(268 50% 55% / 0.4);
+  box-shadow:
+    0 20px 60px -20px rgba(0, 0, 0, 0.6),
+    0 0 40px -10px hsl(268 65% 62% / 0.25),
+    0 0 60px -20px hsl(210 90% 62% / 0.15);
 }
 
 .project-card__title { font-size: 1.2rem; }
@@ -504,7 +639,7 @@ h1, h2, h3 {
 .lang__bar-fill {
   height: 100%;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--red), var(--yellow), var(--blue));
+  background: linear-gradient(90deg, var(--red), var(--yellow), var(--purple), var(--blue));
   transform-origin: left center;
   transform: scaleX(0);
   transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
